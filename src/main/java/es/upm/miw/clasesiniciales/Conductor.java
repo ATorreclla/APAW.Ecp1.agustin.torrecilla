@@ -8,6 +8,10 @@ public class Conductor {
 
     private String telefono;
 
+    public Conductor(String id){
+        this.id = id;
+    }
+
     public Conductor(String id, String nombre, String telefono){
         this.id = id;
         this.nombre = nombre;
