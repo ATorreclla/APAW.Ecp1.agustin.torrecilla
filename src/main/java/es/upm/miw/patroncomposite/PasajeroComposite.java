@@ -1,47 +1,45 @@
 package es.upm.miw.patronComposite;
 
-import java.util.Date;
-
 import java.util.ArrayList;
 
 import java.util.List;
 
 public class PasajeroComposite implements PasajeroComponent {
 
-    private String id;
+    private String name;
 
-    private Date fechaViaje;
+    private  List<PasajeroComponent> grupoPasajeros;
 
-    private Boolean discapacidad;
-
-    private  List<PasajeroComponent> grupoPasajeros = new ArrayList<PasajeroComponent>();
-
-    public PasajeroComposite(String id, Date fechaViaje, Boolean discapacidad) {
+    public PasajeroComposite(String name) {
         super();
-        this.id = id;
-        this.fechaViaje = fechaViaje;
-        this.discapacidad = discapacidad;
+        assert name != null;
+        this.grupoPasajeros = new ArrayList<>();
+        this.name = name;
     }
 
     @Override
     public void add(PasajeroComponent pasajeroComponent) {
+        assert pasajeroComponent != null;
         grupoPasajeros.add(pasajeroComponent);
     }
     @Override
     public void remove(PasajeroComponent pasajeroComponent) {
+        assert pasajeroComponent != null;
         grupoPasajeros.remove(pasajeroComponent);
     }
 
     @Override
-    public PasajeroComponent getChild(int id) {
-        return grupoPasajeros.get(id);
+    public Boolean isComposite() {
+        return true;
     }
+
     @Override
-    public Date getFechaViaje() {
-        return this.fechaViaje;
+    public String view() {
+        return this.name + " ";
     }
+
     @Override
-    public Boolean getDiscapacidad() {
-        return this.discapacidad;
+    public int size() {
+        return grupoPasajeros.size();
     }
 }
