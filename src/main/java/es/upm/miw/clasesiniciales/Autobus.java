@@ -1,4 +1,4 @@
-package es.upm.miw.clasesIniciales;
+package es.upm.miw.clasesiniciales;
 
 import java.util.List;
 
