@@ -1,4 +1,4 @@
-package es.upm.miw.patronComposite;
+package es.upm.miw.patroncomposite;
 
 import java.util.ArrayList;
 
@@ -35,7 +35,7 @@ public class PasajeroComposite implements PasajeroComponent {
 
     @Override
     public String view() {
-        return this.name + " ";
+        return this.name;
     }
 
     @Override

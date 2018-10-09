@@ -1,10 +1,10 @@
-package es.upm.miw.patronComposite;
+package es.upm.miw.patroncomposite;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class PasajeroLeaf implements PasajeroComponent {
     private String id;
-    private Date fechaViaje;
+    private LocalDate fechaViaje;
     private Boolean discapacidad;
 
     public PasajeroLeaf(String id){
@@ -13,7 +13,7 @@ public class PasajeroLeaf implements PasajeroComponent {
         this.id = id;
     }
 
-    public PasajeroLeaf(String id, Date fechaViaje, Boolean discapacidad) {
+    public PasajeroLeaf(String id, LocalDate fechaViaje, Boolean discapacidad) {
         super();
         assert id  != null;
         assert fechaViaje  != null;
@@ -25,17 +25,15 @@ public class PasajeroLeaf implements PasajeroComponent {
 
     @Override
     public void add(PasajeroComponent pasajeroComponent) {
-        //this is leaf node so this method is not applicable to this class.
         throw new UnsupportedOperationException("Operación imposible en hoja");
     }
 
     @Override
     public void remove(PasajeroComponent pasajeroComponent) {
-        //this is leaf node so this method is not applicable to this class.
         throw new UnsupportedOperationException("Operación imposible en hoja");
     }
 
-    public Date getFechaViaje() {
+    public LocalDate getFechaViaje() {
         return this.fechaViaje;
     }
 
@@ -47,7 +45,7 @@ public class PasajeroLeaf implements PasajeroComponent {
         return this.id;
     }
 
-    public void setFechaViaje(Date fechaViaje) {
+    public void setFechaViaje(LocalDate fechaViaje) {
         assert fechaViaje != null;
         this.fechaViaje = fechaViaje;
     }
@@ -64,7 +62,7 @@ public class PasajeroLeaf implements PasajeroComponent {
 
     @Override
     public String view() {
-        return this.getId()+ " ";
+        return this.getId();
     }
 
     @Override

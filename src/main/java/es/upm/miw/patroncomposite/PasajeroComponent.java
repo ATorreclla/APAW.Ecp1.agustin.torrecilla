@@ -1,4 +1,4 @@
-package es.upm.miw.patronComposite;
+package es.upm.miw.patroncomposite;
 
 public interface PasajeroComponent {
     public void add(PasajeroComponent pasajeroComponent);
