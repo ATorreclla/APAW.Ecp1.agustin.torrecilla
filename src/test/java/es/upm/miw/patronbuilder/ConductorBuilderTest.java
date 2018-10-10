@@ -1,6 +1,7 @@
 package es.upm.miw.patronbuilder;
 
 import es.upm.miw.clasesiniciales.Conductor;
+
 import org.junit.jupiter.api.BeforeEach;
 
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,7 @@ public class ConductorBuilderTest {
     }
 
     @Test
-    public void testId() {
+    void testId() {
         assertEquals("1", conductor.getId());
     }
 
